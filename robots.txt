@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sabarish-duvvuru.github.io/sitemap.xml
