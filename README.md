@@ -1,12 +1,12 @@
 # Sabarish Duvvuru
 
-**Engineering Evidence Systems | xEV/IPM Design Engineering | Markdown → Mermaid → Decisions**
+**xEV/IPM Design Engineering Lead | AI-Enabled Engineering Workflow Builder | Mechanical Engineer**
 
 Greenfield, Indiana · [Public profile](https://sabarish-duvvuru.github.io/) · [GitHub](https://github.com/sabarish-duvvuru)
 
 ## Summary
 
-Mechanical and xEV/IPM design engineering lead with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Builds review-controlled engineering evidence systems that evolve meeting notes, drawings, trackers, validation records, and supplier actions into structured Markdown, Mermaid maps, action registers, risk views, decision logs, dashboards, and closure packets.
+Mechanical and xEV/IPM design engineering lead with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Uses AI-assisted workflows to reduce engineering follow-up friction, clarify risks, organize evidence, and create decision-ready outputs for engineering teams.
 
 ## Selected impact
 
@@ -15,14 +15,18 @@ Mechanical and xEV/IPM design engineering lead with 8+ years across inverter pro
 - Improved first-time quality by **15%** through production and inspection training systems.
 - Improved on-time delivery by **10%** and reduced quality defects by **20%** through supplier scorecard practices.
 
-## Core capabilities
+## Main engineering work
 
-- xEV / IPM engineering: inverter program support, release readiness, supplier readiness, drawing and validation coordination.
-- Engineering evidence systems: Markdown records, Mermaid maps, action registers, decision logs, risk views, next-check loops.
-- Digital engineering: Power BI dashboards, structured trackers, templates, macros, spreadsheet/document automation.
-- AI-enabled workflows: LLM-assisted summarization, document intelligence, prompt-controlled review layers, fallback-aware outputs.
-- Quality / validation: DFMEA, DVP&R, DRBFM, root-cause analysis, corrective action, prototype validation.
-- CAD / PLM: CATIA V5, NX, SolidWorks, Creo, AutoCAD, ENOVIA, Teamcenter.
+- xEV/IPM design coordination across design, drawing, validation, supplier, and release-readiness workstreams.
+- Supplier and validation readiness tracking for open risks, owner actions, timing concerns, and evidence needs.
+- Cross-functional execution across engineering, quality, manufacturing, suppliers, and program stakeholders.
+
+## AI-enabled workflow value
+
+- Extract actions and risks from meeting notes, emails, PDFs, tracker rows, and technical notes.
+- Organize fact, assumption, owner, due date, evidence needed, decision needed, and next check.
+- Summarize engineering review updates, leadership updates, readiness views, and follow-up packets.
+- Keep outputs review-controlled: AI drafts the view; engineering judgment accepts or rejects it.
 
 ## Experience
 
@@ -50,12 +54,6 @@ Mechanical and xEV/IPM design engineering lead with 8+ years across inverter pro
 - Improved on-time delivery by **10%** and reduced quality defects by **20%** through supplier scorecard practices.
 - Built repeatable documentation systems including weld reports, templates, checklists, and process-flow references.
 
-### Earlier engineering roles | Zimmer Biomet · I28 Technologies · Sicame India Connectors | 2012 – 2018
+## Public-safe boundary
 
-Supported manufacturing process optimization, quality documentation, BOM/report/drawing release activity, Teamcenter workflows, vehicle development, reverse engineering from STL scans, and thermal/mechanical project work.
-
-## Education and credentials
-
-- MS, Mechanical Engineering — University of Texas at Arlington
-- BS, Mechanical Engineering — Anna University
-- Lean Management · Lean Six Sigma Green Belt · Minitab
+The public profile does not show confidential program details, customer data, drawings, supplier records, validation results, or proprietary decision records. AI is used as a workflow assistant; human engineering review owns risk interpretation, acceptance criteria, and final decisions.
