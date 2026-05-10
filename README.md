@@ -1,12 +1,12 @@
 # Sabarish Duvvuru
 
-**xEV/IPM Design Engineering Lead | AI-Enabled Engineering Workflow Builder | Mechanical Engineer**
+**Senior xEV/IPM Design Engineer | AI-Enabled Engineering Workflow Builder | Mechanical Engineer**
 
 Greenfield, Indiana · [Public profile](https://sabarish-duvvuru.github.io/) · [GitHub](https://github.com/sabarish-duvvuru)
 
 ## Summary
 
-Mechanical and xEV/IPM design engineering lead with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Uses AI-assisted workflows to reduce engineering follow-up friction, clarify risks, organize evidence, and create decision-ready outputs for engineering teams.
+Senior mechanical and xEV/IPM design engineer with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Uses AI tools to turn scattered engineering inputs into owner/action/risk/readiness views that engineers can verify and act on.
 
 ## Selected impact
 
@@ -14,6 +14,10 @@ Mechanical and xEV/IPM design engineering lead with 8+ years across inverter pro
 - Reduced manual reporting time by **30%** by creating a Power BI part-status dashboard.
 - Improved first-time quality by **15%** through production and inspection training systems.
 - Improved on-time delivery by **10%** and reduced quality defects by **20%** through supplier scorecard practices.
+
+## Best fit
+
+Senior xEV/IPM or inverter/IPM mechanical design roles where supplier readiness, validation/release coordination, and AI-enabled engineering operations can improve execution.
 
 ## Main engineering work
 
@@ -23,10 +27,10 @@ Mechanical and xEV/IPM design engineering lead with 8+ years across inverter pro
 
 ## AI-enabled workflow value
 
-- Extract actions and risks from meeting notes, emails, PDFs, tracker rows, and technical notes.
-- Organize fact, assumption, owner, due date, evidence needed, decision needed, and next check.
-- Summarize engineering review updates, leadership updates, readiness views, and follow-up packets.
-- Keep outputs review-controlled: AI drafts the view; engineering judgment accepts or rejects it.
+- Turn scattered review inputs into owner, action, timing, evidence-needed, and open-question views.
+- Separate confirmed facts from assumptions, missing evidence, and items needing review.
+- Prepare concise readiness, risk, and leadership summaries that engineers can verify quickly.
+- Keep decisions human-owned: AI drafts the view; engineering review accepts, corrects, rejects, and decides.
 
 ## Experience
 
