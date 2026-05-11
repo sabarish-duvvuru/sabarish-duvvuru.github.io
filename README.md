@@ -1,12 +1,12 @@
 # Sabarish Duvvuru
 
-**Senior xEV/IPM Design Engineer | AI-Enabled Engineering Workflow Builder | Mechanical Engineer**
+**Senior xEV/IPM Design Engineer | AI-Supported Engineering Follow-up Systems | Mechanical Engineer**
 
 Greenfield, Indiana · [Public profile](https://sabarish-duvvuru.github.io/) · [GitHub](https://github.com/sabarish-duvvuru)
 
 ## Summary
 
-Senior mechanical and xEV/IPM design engineer with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Uses AI tools to turn scattered engineering inputs into owner/action/risk/readiness views that engineers can verify and act on.
+Senior mechanical and xEV/IPM design engineer with 8+ years across inverter programs, prototype validation, supplier readiness, quality systems, and launch execution. Turns complex design, supplier, validation, and release follow-up into clear owner/action/risk/readiness systems. Uses AI tools where they create practical leverage while keeping engineering judgment human-owned.
 
 ## Selected impact
 
@@ -17,7 +17,14 @@ Senior mechanical and xEV/IPM design engineer with 8+ years across inverter prog
 
 ## Best fit
 
-Senior xEV/IPM or inverter/IPM mechanical design roles where supplier readiness, validation/release coordination, and AI-enabled engineering operations can improve execution.
+Senior xEV/IPM or inverter/IPM mechanical design roles where supplier readiness, validation/release coordination, and practical AI-supported follow-up can improve execution.
+
+## What I help teams do
+
+- Close supplier actions faster by making owner, evidence, timing, blocked item, and escalation path visible.
+- Make validation readiness visible by tracking confirmed evidence, missing evidence, changes, and decisions needed.
+- Reduce meeting-to-action drift by converting discussions into owner/action/risk follow-up.
+- Prepare clearer decision reviews with bottom line, open risk, options, owner ask, and next review path.
 
 ## Main engineering work
 
@@ -25,12 +32,13 @@ Senior xEV/IPM or inverter/IPM mechanical design roles where supplier readiness,
 - Supplier and validation readiness tracking for open risks, owner actions, timing concerns, and evidence needs.
 - Cross-functional execution across engineering, quality, manufacturing, suppliers, and program stakeholders.
 
-## AI-enabled workflow value
+## Where AI helps
 
-- Turn scattered review inputs into owner, action, timing, evidence-needed, and open-question views.
+- Extract open actions from notes, trackers, email, and review material.
+- Classify design, supplier, validation, timing, and release-readiness risks.
 - Separate confirmed facts from assumptions, missing evidence, and items needing review.
-- Prepare concise readiness, risk, and leadership summaries that engineers can verify quickly.
-- Keep decisions human-owned: AI drafts the view; engineering review accepts, corrects, rejects, and decides.
+- Draft concise readiness summaries, owner asks, and decision points for engineering review.
+- Keep decisions human-owned: AI drafts the structure; engineering review accepts, corrects, rejects, and decides.
 
 ## Experience
 
@@ -38,19 +46,19 @@ Senior xEV/IPM or inverter/IPM mechanical design roles where supplier readiness,
 
 - Lead US design engineering coordination for inverter/IPM workstreams supporting xEV programs.
 - Coordinate technical actions across US engineering, Japan design teams, suppliers, quality, manufacturing, and program stakeholders.
-- Build structured engineering systems for design, drawing, supplier, validation, and release-readiness follow-up.
+- Build follow-up systems for design, drawing, supplier, validation, and release-readiness actions to reduce handoff ambiguity.
 
 ### Sr. Engineer | Astemo Indiana, Inc. | Aug 2023 – Dec 2025
 
 - Led engineering workstreams for automotive inverter development.
 - Managed technical actions on schedule while maintaining alignment to specifications and stakeholder requirements.
-- Coordinated with Japan design teams to resolve technical questions, supplier actions, validation needs, and release-readiness items.
+- Coordinated with Japan design teams to close technical questions, supplier actions, validation needs, and release-readiness items.
 
 ### Sr. Prototype Engineer | Toyota Motor North America — R&D | Feb 2021 – Aug 2023
 
 - Developed validation plans for next-generation pickup trucks, focusing on drivability, harmonics, and off-road performance.
 - Reduced shipping rack fabrication costs by **$525K** by identifying and qualifying a more cost-effective supplier.
-- Designed robotic-cell vision systems and built a Power BI dashboard that reduced manual reporting time by **30%**.
+- Designed robotic-cell vision systems and built a Power BI dashboard that reduced manual reporting time by **30%** while improving review visibility.
 
 ### Build Prototype Engineer | Stellantis North America | Jan 2018 – Jan 2021
 
