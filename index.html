@@ -83,6 +83,17 @@
       border-radius:999px;padding:.42rem .85rem;font-weight:600;font-size:.85rem
     }
     .nav .nav-cta:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+    .nav .nav-lab{
+      border:1px solid var(--navy-line);background:var(--navy-soft);color:var(--navy-deep);
+      border-radius:999px;padding:.32rem .7rem;font-weight:600;font-size:.82rem;
+      display:inline-flex;align-items:center;gap:.32rem
+    }
+    .nav .nav-lab::before{
+      content:'';width:6px;height:6px;border-radius:50%;background:var(--green);
+      animation:navpulse 2.4s ease-in-out infinite
+    }
+    .nav .nav-lab:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+    @keyframes navpulse{0%,100%{opacity:1}50%{opacity:.35}}
 
     /* ---- Hero ---- */
     .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:clamp(32px,6vw,68px);align-items:start;margin-bottom:84px}
@@ -219,7 +230,7 @@
       .page{padding:24px 18px 56px}
       .mast{margin-bottom:40px}
       .nav{gap:1rem}
-      .nav a:not(.nav-cta){display:none}
+      .nav a:not(.nav-cta):not(.nav-lab){display:none}
       h1{font-size:2.5rem;margin-bottom:16px}
       .dek{font-size:1.2rem}
       .intro{font-size:.98rem}
@@ -254,6 +265,7 @@
       .card,.artifact-list,.rows,.metric,.ai-step,.lab,.fast-scan,.cta,.boundary{border-color:#555}
     }
   </style>
+  <link rel="stylesheet" href="app.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -261,7 +273,7 @@
     <header class="mast" aria-label="Site header">
       <a class="mark" href="#" aria-label="Sabarish Duvvuru home">SD</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#ai">AI support</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
+        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#lab" class="nav-lab">Live Lab</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
       </nav>
     </header>
 
@@ -348,6 +360,94 @@
         </div>
       </section>
 
+      <section id="lab" aria-labelledby="lab-title">
+        <div class="section-head">
+          <p class="eyebrow">Live Lab</p>
+          <h2 id="lab-title">AI in the page, not a screenshot.</h2>
+          <p>Four interactive demos running entirely in your browser — no servers, no API keys, no model downloads. The same engineering instinct that turns noisy validation data into review-ready signal, made tangible.</p>
+          <div class="lab-strip" aria-live="polite">
+            <span class="lab-status" data-global-status data-kind="off">Checking capabilities…</span>
+            <span>zero network · works offline · progressive enhancement</span>
+          </div>
+        </div>
+
+        <div class="lab-grid">
+          <!-- 1. WebGPU image dithering -->
+          <article class="lab-card" data-demo="dither">
+            <div class="lab-card-head">
+              <h3>WebGPU signal dithering</h3>
+              <span class="tag">WGSL compute</span>
+            </div>
+            <canvas data-canvas role="img" aria-label="Live dithered signal visualization, updating in real time"></canvas>
+            <div class="lab-controls" data-controls>
+              <label>Levels <input type="range" name="levels" min="2" max="8" value="3" aria-label="Quantization levels"></label>
+              <label>Threshold <input type="range" name="threshold" min="-30" max="30" value="0" aria-label="Dither threshold bias"></label>
+              <label>Method
+                <select name="mode" aria-label="Dither method">
+                  <option value="bayer">Bayer (ordered)</option>
+                  <option value="fs">Floyd–Steinberg</option>
+                </select>
+              </label>
+            </div>
+            <p class="cap"><strong>Why this maps to engineering:</strong> data reduction and signal quantization — the same instinct that turns noisy validation data into a clean review-ready signal. <span data-status></span></p>
+          </article>
+
+          <!-- 2. Interactive readiness flowchart -->
+          <article class="lab-card" data-demo="flowchart">
+            <div class="lab-card-head">
+              <h3>Readiness workflow graph</h3>
+              <span class="tag">force-directed</span>
+            </div>
+            <canvas data-canvas class="interactive" role="img" aria-label="Interactive force-directed graph of the engineering readiness workflow. Drag any node."></canvas>
+            <div class="lab-controls"><span>Drag any node — physics re-settles. Data particles flow along edges.</span></div>
+            <p class="cap"><strong>Why this maps to engineering:</strong> the inputs → AI draft → engineer gate → readiness loop, visualized as a living system rather than a static slide. <span data-status></span></p>
+          </article>
+
+          <!-- 3. Deterministic action/risk extractor (full width) -->
+          <article class="lab-card span-2" data-demo="extractor">
+            <div class="lab-card-head">
+              <h3>Action / risk extractor — deterministic &amp; explainable</h3>
+              <span class="tag">no model · instant</span>
+            </div>
+            <p class="cap">Paste engineering notes, an email, or meeting minutes. Owners, actions, risks, and due dates are extracted and highlighted in place — <strong>instantly, with zero download and no black-box model</strong>. Auditable by design: every span is traceable to a pattern, the kind of AI assist you'd trust in a review.</p>
+            <div class="ex-wrap">
+              <textarea data-input aria-label="Input text for extraction" spellcheck="false"></textarea>
+              <div class="ex-out" data-output role="region" aria-label="Highlighted extraction output" aria-live="polite"></div>
+            </div>
+            <div class="lab-controls">
+              <div class="ex-tally" data-tally>
+                <span class="chip owner">Owner <b data-c="owner">0</b></span>
+                <span class="chip action">Action <b data-c="action">0</b></span>
+                <span class="chip risk">Risk <b data-c="risk">0</b></span>
+                <span class="chip due">Due <b data-c="due">0</b></span>
+              </div>
+              <button data-sample type="button">Load sample notes</button>
+            </div>
+            <p class="cap"><span data-status></span></p>
+          </article>
+
+          <!-- 4. Risk propagation field sim -->
+          <article class="lab-card span-2" data-demo="risk">
+            <div class="lab-card-head">
+              <h3>Risk-propagation field sim — FMEA made tangible</h3>
+              <span class="tag">fault cascade</span>
+            </div>
+            <canvas data-canvas class="interactive" role="img" aria-label="Risk propagation simulation. Click any node to inject a fault and watch it cascade."></canvas>
+            <div class="lab-controls">
+              <label>Coupling <input type="range" name="coupling" min="0" max="100" value="60" aria-label="Coupling strength between nodes"></label>
+              <label>Isolation <input type="range" name="isolation" min="0" max="90" value="20" aria-label="Fault isolation / containment"></label>
+              <button data-reset type="button">Reset</button>
+              <span>Click any node to inject a fault.</span>
+            </div>
+            <p class="cap"><strong>Why this maps to engineering:</strong> see how a single supplier or validation failure cascades across the release chain before it happens — the core of DFMEA / DRBFM thinking, made interactive. <span data-status></span></p>
+          </article>
+        </div>
+
+        <div class="lab-legend">
+          <p><strong>How this is built:</strong> every demo is plain JavaScript and WGSL, served as static files from this repo. <code>dither.js</code> runs a real WebGPU compute shader (with a CPU Floyd–Steinberg fallback). <code>extractor.js</code> is a hand-built tokenizer + scoring pipeline — no neural net, so it's instant and fully auditable. <code>flowchart.js</code> and <code>risk-sim.js</code> use Canvas2D physics with static SVG fallbacks. All four pause when scrolled out of view and respect <code>prefers-reduced-motion</code>. Zero network requests after the page loads.</p>
+        </div>
+      </section>
+
       <section id="ai" aria-labelledby="ai-title">
         <div class="section-head">
           <p class="eyebrow">AI support</p>
@@ -413,5 +513,6 @@
 
     <footer class="footer"><span>© 2026 Sabarish Duvvuru</span><span><a href="Sabarish-Duvvuru-Resume.pdf" download>resume.pdf</a> · <a href="https://github.com/sabarish-duvvuru">github</a> · <a href="mailto:dsabarish@outlook.com">email</a></span></footer>
   </div>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
