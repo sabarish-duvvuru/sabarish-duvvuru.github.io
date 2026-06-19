@@ -8,7 +8,7 @@
   <meta name="author" content="Sabarish Duvvuru">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sabarish-duvvuru.github.io/">
-  <meta name="theme-color" content="#f7f5ef">
+  <meta name="theme-color" content="#f6f4ee">
   <meta property="og:title" content="Sabarish Duvvuru — xEV/IPM Design Follow-up Systems">
   <meta property="og:description" content="Senior xEV/IPM design engineer turning design, supplier, validation, and release follow-up into clear action, risk, and readiness systems.">
   <meta property="og:type" content="profile">
@@ -29,45 +29,230 @@
   </script>
   <style>
     :root{
-      --paper:#f7f5ef; --paper-2:#fffdf8; --ink:#111111; --muted:#5c5c5c; --line:#d8d2c4;
-      --soft:#ebe6d9; --blue:#2457ff; --green:#166534; --amber:#b45309; --code:#f0ece2;
-      --max:960px; --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
+      --paper:#f6f4ee;        /* warm editorial paper */
+      --paper-2:#fffdf7;      /* card surface */
+      --ink:#1b2027;          /* near-black, cool tint */
+      --ink-soft:#2b323c;     /* secondary ink */
+      --muted:#626a76;        /* muted gray */
+      --muted-2:#878d97;      /* lighter muted */
+      --line:#e4ded0;         /* warm hairline */
+      --line-2:#d3cab6;       /* stronger divider */
+      --soft:#efe9da;         /* soft surface */
+      --navy:#1e3a5f;         /* executive navy accent */
+      --navy-deep:#152d49;    /* hover/active */
+      --navy-soft:#e9eff6;    /* navy tint surface */
+      --navy-line:#c7d6e6;    /* navy hairline */
+      --amber:#8a5a00;        /* refined amber */
+      --green:#2f5d3f;        /* refined green */
+      --code:#f1ede3;         /* code surface */
+      --max:980px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
       --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      --r:14px;               /* unified card radius */
+      --r-sm:10px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 var(--sans);text-rendering:optimizeLegibility}
-    a{color:var(--ink);text-decoration-thickness:1.5px;text-underline-offset:3px} a:hover{color:var(--blue)}
-    a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
-    .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.75rem 1rem;z-index:10}.skip:focus{left:1rem;top:1rem}
-    .page{max-width:var(--max);margin:0 auto;padding:28px clamp(18px,4vw,36px) 64px}
-    .mast{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:66px}
-    .mark{font:800 1.2rem/1 var(--mono);letter-spacing:-.04em;border:2px solid var(--ink);border-radius:999px;width:48px;height:48px;display:grid;place-items:center;text-decoration:none;background:var(--paper-2)}
-    .nav{display:flex;gap:1rem;flex-wrap:wrap;font:600 .88rem/1 var(--mono);color:var(--muted)}.nav a{text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--ink)}
-    .hero{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(310px,.94fr);gap:clamp(28px,6vw,64px);align-items:start;margin-bottom:70px}
-    .kicker{font:750 .78rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-    h1{font-size:clamp(3rem,8.2vw,6.4rem);line-height:.88;letter-spacing:-.09em;margin:0 0 22px;font-weight:900;max-width:10ch}
-    .dek{font-size:clamp(1.34rem,2.8vw,2.08rem);line-height:1.13;letter-spacing:-.045em;margin:0 0 24px;font-weight:780;max-width:780px}.dek span{color:var(--blue)}
-    .intro{font-size:1.04rem;color:var(--muted);max-width:60ch;margin:0 0 28px}.intro strong{color:var(--ink)}
-    .actions{display:flex;gap:.7rem;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:.45rem;border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:999px;padding:.66rem .9rem;text-decoration:none;font-weight:760}.button.secondary{background:transparent;color:var(--ink)}.button:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-    .workflow{display:flex;align-items:center;gap:.42rem;flex-wrap:wrap;margin-top:1rem;font:800 .74rem/1 var(--mono);color:var(--muted)}.workflow span{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:.36rem .5rem}.workflow b{color:var(--blue)}
-    .fast-scan{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;margin:1.15rem 0 0;background:var(--ink);border:1.5px solid var(--ink);border-radius:16px;overflow:hidden}.fast-scan div{background:var(--paper-2);padding:.72rem .8rem}.fast-scan dt{font:850 .68rem/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--blue);margin:0 0 .32rem}.fast-scan dd{margin:0;color:var(--ink);font-size:.88rem;line-height:1.35}.best-fit{margin-top:1rem;border:1.5px solid var(--ink);border-radius:16px;background:var(--paper-2);padding:.9rem}.best-fit h2{font:850 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin:0 0 .45rem}.best-fit p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.42}.best-fit strong{color:var(--ink)}
-    .lab{border:1.5px solid var(--ink);background:var(--paper-2);border-radius:18px;overflow:hidden;box-shadow:9px 9px 0 var(--ink)}.tabs{display:flex;border-bottom:1.5px solid var(--ink);background:var(--soft);font:700 .78rem/1 var(--mono)}.tab{padding:.72rem .85rem;border-right:1.5px solid var(--ink)}.flow-panel{padding:1rem;display:grid;gap:.75rem}.flow-step{border:1px solid var(--line);border-radius:14px;background:#fff;padding:.85rem}.flow-step span{display:block;font:850 .68rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:.38rem}.flow-step strong{display:block;font-size:1.02rem;line-height:1.15;letter-spacing:-.035em}.flow-step p{margin:.42rem 0 0;color:var(--muted);font-size:.86rem;line-height:1.38}
-    pre{margin:0;white-space:pre-wrap;overflow:auto;font:13px/1.55 var(--mono);tab-size:2}.lab pre{padding:1rem 1.05rem;color:#1d1d1d}.dim{color:#6b7280}.blue{color:#1d4ed8}.green{color:#166534}.amber{color:#b45309}
-    section{padding:42px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:190px 1fr;gap:1.2rem;margin-bottom:26px}.section-head h2{font:850 1rem/1 var(--mono);letter-spacing:-.03em;margin:0}.section-head p{margin:0;color:var(--muted);max-width:68ch}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.card{border:1px solid var(--line);background:var(--paper-2);border-radius:18px;padding:1rem}.card h3{margin:.2rem 0 .55rem;font-size:1.1rem;letter-spacing:-.035em;line-height:1.1}.card p{margin:0;color:var(--muted);font-size:.94rem}.card .label{font:850 .72rem/1 var(--mono);letter-spacing:.04em;color:var(--blue)}
-    .ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ink);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden}.ai-step{background:var(--paper-2);padding:1rem;min-height:172px}.ai-step .n{font:850 .72rem/1 var(--mono);color:var(--blue);margin-bottom:14px}.ai-step h3{font-size:1.08rem;line-height:1.08;letter-spacing:-.04em;margin:0 0 .5rem}.ai-step p{font-size:.91rem;color:var(--muted);margin:0}
-    .artifact-list{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper-2)}.artifact{display:grid;grid-template-columns:260px 1fr;gap:1rem;padding:.95rem 1rem;border-bottom:1px solid var(--line)}.artifact:last-child{border-bottom:0}.artifact code{font:850 .82rem/1.25 var(--mono);color:var(--blue);background:var(--code);border-radius:999px;padding:.32rem .48rem;white-space:normal}.artifact p{margin:0;color:var(--muted);font-size:.94rem}.note{margin:.9rem 0 0;color:var(--muted);font-size:.94rem}
-    .impact{display:grid;grid-template-columns:repeat(5,1fr);border:1.5px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--ink);gap:1px}.metric{background:var(--paper-2);padding:1rem}.metric strong{display:block;font-size:1.6rem;letter-spacing:-.05em;color:var(--amber);line-height:1}.metric span{display:block;margin-top:.45rem;color:var(--muted);font-size:.86rem;font-weight:650}.impact-note{margin:1rem 0 0;border-left:4px solid var(--blue);background:var(--paper-2);padding:1rem 1.1rem;border-radius:0 16px 16px 0;color:var(--muted)}
-    .rows{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper-2)}.row{display:grid;grid-template-columns:170px 1fr;gap:1.2rem;padding:1rem;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.row .date{font:750 .78rem/1.35 var(--mono);color:var(--muted)}.row h3{margin:0;font-size:1.05rem;letter-spacing:-.03em}.row p{margin:.28rem 0 0;color:var(--muted);font-size:.94rem}
-    .tags{display:flex;gap:.45rem;flex-wrap:wrap}.tag{font:750 .78rem/1 var(--mono);border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:.42rem .55rem}.tag.blue{border-color:#bfdbfe;background:#eff6ff;color:#1d4ed8}.tag.green{border-color:#bbf7d0;background:#f0fdf4;color:#166534}.tag.ai{border-color:#ddd6fe;background:#f5f3ff;color:#5b21b6}
-    .boundary{border:1.5px solid var(--ink);background:var(--ink);color:#fff;border-radius:18px;padding:1.15rem}.boundary h3{margin:0 0 .45rem;font-size:1.05rem}.boundary p{margin:0;color:#e5e7eb}.boundary strong{color:#fff}
-    .cta{border:1.5px solid var(--ink);border-radius:20px;background:var(--paper-2);padding:1.25rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.cta h3{margin:0 0 .25rem;font-size:1.25rem;letter-spacing:-.04em}.cta p{margin:0;color:var(--muted);max-width:64ch}
-    .footer{padding-top:42px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.92rem}.footer a{color:var(--ink)}
-    @media(max-width:900px){.hero,.section-head{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.ai-grid,.impact{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}.lab{box-shadow:6px 6px 0 var(--ink)}}
-    @media(max-width:560px){.page{padding:20px 16px 48px}.mast{margin-bottom:34px}.nav a:not(.keep){display:none}h1{font-size:3.15rem;margin-bottom:18px}.dek{font-size:1.22rem}.intro{font-size:.98rem}.hero{gap:24px;margin-bottom:38px}.actions .button{width:100%;justify-content:center}.workflow{font-size:.7rem;gap:.32rem}.workflow span{padding:.32rem .42rem}.fast-scan,.cards,.ai-grid,.impact{grid-template-columns:1fr}.tabs{overflow:auto}.tab{white-space:nowrap}.lab pre{font-size:12px;line-height:1.48}.ai-step{min-height:auto;padding:.9rem}.card,.metric,.row,.boundary{padding:.9rem}section{padding:34px 0}.section-head{margin-bottom:18px}.artifact{grid-template-columns:1fr;gap:.45rem}.cta{align-items:flex-start}.cta .button{width:100%;justify-content:center}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}}
-    @media(prefers-contrast:more){:root{--paper:#fff;--paper-2:#fff;--muted:#222;--line:#555;--blue:#003e73;--amber:#7a3e00;--code:#f2f2f2}.card,.artifact-list,.rows,.metric,.ai-step{border-color:#555}}
+    body{
+      margin:0;background:var(--paper);color:var(--ink);
+      font:16px/1.65 var(--sans);text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--ink);text-decoration-thickness:1.5px;text-underline-offset:3px;transition:color .15s ease}
+    a:hover{color:var(--navy)}
+    a:focus-visible,button:focus-visible{outline:2.5px solid var(--navy);outline-offset:3px;border-radius:6px}
+    .skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.75rem 1rem;z-index:20;border-radius:0 0 8px 0}
+    .skip:focus{left:0;top:0}
+
+    .page{max-width:var(--max);margin:0 auto;padding:32px clamp(20px,4vw,40px) 72px}
+
+    /* ---- Masthead ---- */
+    .mast{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:72px}
+    .mark{
+      display:grid;place-items:center;width:42px;height:42px;
+      background:var(--ink);color:#fff;border-radius:10px;
+      font:800 .95rem/1 var(--sans);letter-spacing:-.03em;
+      text-decoration:none;transition:background .15s ease
+    }
+    .mark:hover{background:var(--navy);color:#fff}
+    .nav{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;font:500 .92rem/1 var(--sans);color:var(--muted)}
+    .nav a{text-decoration:none;color:var(--muted);transition:color .15s ease}
+    .nav a:hover{color:var(--ink)}
+    .nav .nav-cta{
+      border:1px solid var(--line-2);background:var(--paper-2);color:var(--ink);
+      border-radius:999px;padding:.42rem .85rem;font-weight:600;font-size:.85rem
+    }
+    .nav .nav-cta:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+
+    /* ---- Hero ---- */
+    .hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:clamp(32px,6vw,68px);align-items:start;margin-bottom:84px}
+    .kicker{
+      display:inline-block;font:600 .76rem/1 var(--sans);
+      letter-spacing:.12em;text-transform:uppercase;color:var(--navy);
+      margin:0 0 22px;padding-bottom:.55rem;border-bottom:2px solid var(--navy)
+    }
+    h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:.98;letter-spacing:-.035em;margin:0 0 20px;font-weight:800;max-width:11ch}
+    .dek{font-size:clamp(1.22rem,2.1vw,1.62rem);line-height:1.25;letter-spacing:-.02em;margin:0 0 24px;font-weight:600;color:var(--ink-soft);max-width:30ch}
+    .dek span{color:var(--navy);font-weight:700}
+    .intro{font-size:1.02rem;color:var(--muted);max-width:54ch;margin:0 0 30px;line-height:1.7}
+    .intro strong{color:var(--ink);font-weight:650}
+
+    .actions{display:flex;gap:.6rem;flex-wrap:wrap}
+    .button{
+      display:inline-flex;align-items:center;gap:.45rem;
+      border:1px solid var(--ink);background:var(--ink);color:#fff;
+      border-radius:999px;padding:.66rem 1.15rem;text-decoration:none;
+      font-weight:600;font-size:.94rem;transition:all .15s ease
+    }
+    .button.secondary{background:transparent;color:var(--ink)}
+    .button:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+    .button.secondary:hover{background:var(--ink);color:#fff}
+
+    .workflow{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;margin-top:1.6rem;font:600 .74rem/1 var(--sans);color:var(--muted)}
+    .workflow span{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:.42rem .62rem;letter-spacing:.01em}
+    .workflow b{color:var(--navy);font-weight:700;font-size:.8rem}
+
+    .fast-scan{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin:1.8rem 0 0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+    .fast-scan > div{padding:.85rem 1rem}
+    .fast-scan > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .fast-scan > div:nth-child(odd){border-right:1px solid var(--line)}
+    .fast-scan dt{font:650 .68rem/1 var(--sans);letter-spacing:.09em;text-transform:uppercase;color:var(--navy);margin:0 0 .4rem}
+    .fast-scan dd{margin:0;color:var(--ink);font-size:.86rem;line-height:1.4}
+
+    .best-fit{margin-top:1.4rem;border-left:3px solid var(--navy);background:var(--navy-soft);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:1rem 1.15rem}
+    .best-fit h2{font:600 .68rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0 0 .5rem}
+    .best-fit p{margin:0;color:var(--ink-soft);font-size:.92rem;line-height:1.5}
+    .best-fit strong{color:var(--ink);font-weight:650}
+
+    /* ---- Lab panel ---- */
+    .lab{border:1px solid var(--line);background:var(--paper-2);border-radius:var(--r);overflow:hidden;box-shadow:0 1px 2px rgba(27,32,39,.04)}
+    .lab-head{padding:1rem 1.15rem .4rem;border-bottom:1px solid var(--line);background:var(--soft)}
+    .lab-head .lh-label{font:650 .68rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--navy);margin:0 0 .35rem}
+    .lab-head .lh-title{font:600 .95rem/1.2 var(--sans);margin:0;color:var(--ink);letter-spacing:-.01em}
+    .flow-panel{padding:1.05rem;display:grid;gap:.7rem}
+    .flow-step{border:1px solid var(--line);border-radius:var(--r-sm);background:#fff;padding:.85rem .95rem;transition:border-color .15s ease}
+    .flow-step:hover{border-color:var(--navy-line)}
+    .flow-step .fs-n{font:600 .66rem/1 var(--mono);letter-spacing:.05em;color:var(--navy);margin-bottom:.4rem}
+    .flow-step strong{display:block;font-size:.98rem;line-height:1.2;letter-spacing:-.02em;font-weight:650;color:var(--ink)}
+    .flow-step p{margin:.4rem 0 0;color:var(--muted);font-size:.85rem;line-height:1.45}
+
+    /* ---- Sections ---- */
+    section{padding:60px 0;border-top:1px solid var(--line)}
+    .section-head{margin-bottom:34px;max-width:62ch}
+    .eyebrow{display:inline-block;font:600 .72rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:0 0 .7rem}
+    .section-head h2{font-size:clamp(1.5rem,3vw,1.95rem);line-height:1.1;letter-spacing:-.025em;margin:0 0 .7rem;font-weight:700}
+    .section-head p{margin:0;color:var(--muted);font-size:1rem;line-height:1.6}
+
+    /* ---- Cards (unified) ---- */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{border:1px solid var(--line);background:var(--paper-2);border-radius:var(--r);padding:1.25rem;transition:border-color .15s ease,transform .15s ease}
+    .card:hover{border-color:var(--navy-line)}
+    .card .label{font:600 .72rem/1 var(--sans);letter-spacing:.06em;color:var(--navy);display:inline-block;margin-bottom:.7rem}
+    .card h3{margin:0 0 .55rem;font-size:1.12rem;letter-spacing:-.02em;line-height:1.2;font-weight:650}
+    .card p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.55}
+
+    /* ---- AI grid (outcomes) ---- */
+    .ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+    .ai-step{background:var(--paper-2);padding:1.2rem;min-height:180px;transition:background .15s ease}
+    .ai-step:hover{background:#fff}
+    .ai-step .n{font:600 .74rem/1 var(--mono);color:var(--navy);margin-bottom:.85rem;letter-spacing:.04em}
+    .ai-step h3{font-size:1.02rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 .55rem;font-weight:650}
+    .ai-step p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.5}
+
+    /* ---- Impact metrics ---- */
+    .impact{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+    .metric{padding:1.35rem 1.15rem;border-right:1px solid var(--line)}
+    .metric:last-child{border-right:0}
+    .metric strong{display:block;font-size:1.85rem;letter-spacing:-.035em;color:var(--ink);line-height:1;font-weight:750;margin-bottom:.5rem}
+    .metric span{display:block;color:var(--muted);font-size:.82rem;font-weight:500;line-height:1.35}
+    .impact-note{margin:1.2rem 0 0;border-left:3px solid var(--navy);background:var(--navy-soft);padding:1rem 1.15rem;border-radius:0 var(--r-sm) var(--r-sm) 0;color:var(--ink-soft);font-size:.95rem;line-height:1.55}
+
+    /* ---- Artifacts ---- */
+    .artifact-list{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+    .artifact{display:grid;grid-template-columns:268px 1fr;gap:1rem;padding:1rem 1.15rem;border-bottom:1px solid var(--line);align-items:center}
+    .artifact:last-child{border-bottom:0}
+    .artifact code{font:600 .8rem/1.3 var(--mono);color:var(--navy);background:var(--code);border:1px solid var(--line);border-radius:var(--r-sm);padding:.4rem .6rem;white-space:normal;display:inline-block}
+    .artifact p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.5}
+    .note{margin:1rem 0 0;color:var(--muted-2);font-size:.88rem;line-height:1.5}
+
+    /* ---- Timeline ---- */
+    .rows{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper-2)}
+    .row{display:grid;grid-template-columns:168px 1fr;gap:1.2rem;padding:1.15rem 1.2rem;border-bottom:1px solid var(--line)}
+    .row:last-child{border-bottom:0}
+    .row .date{font:500 .82rem/1.4 var(--mono);color:var(--navy);letter-spacing:-.01em}
+    .row h3{margin:0;font-size:1.05rem;letter-spacing:-.02em;font-weight:650;line-height:1.25}
+    .row p{margin:.4rem 0 0;color:var(--muted);font-size:.93rem;line-height:1.55}
+
+    /* ---- Tags ---- */
+    .tags{display:flex;gap:.5rem;flex-wrap:wrap}
+    .tag{font:500 .8rem/1 var(--sans);border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:.45rem .7rem;color:var(--ink-soft);letter-spacing:-.005em}
+    .tag.green{border-color:#c5dccd;background:#f0f7f2;color:var(--green)}
+    .tag.blue{border-color:var(--navy-line);background:var(--navy-soft);color:var(--navy)}
+    .tag.ai{border-color:#ddd0e8;background:#f5f0fa;color:#5b3a8a}
+
+    /* ---- Boundary ---- */
+    .boundary{border:1px solid var(--navy-line);background:var(--navy-soft);border-radius:var(--r);padding:1.3rem 1.4rem;border-left:4px solid var(--navy)}
+    .boundary h3{margin:0 0 .55rem;font-size:1.05rem;font-weight:650;letter-spacing:-.02em;color:var(--ink)}
+    .boundary p{margin:0;color:var(--ink-soft);line-height:1.6;font-size:.96rem}
+    .boundary strong{color:var(--navy-deep);font-weight:650}
+
+    /* ---- CTA ---- */
+    .cta{border:1px solid var(--line-2);border-radius:var(--r);background:var(--paper-2);padding:1.5rem 1.6rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .cta h3{margin:0 0 .35rem;font-size:1.3rem;letter-spacing:-.025em;font-weight:700}
+    .cta p{margin:0;color:var(--muted);max-width:60ch;line-height:1.55}
+
+    /* ---- Footer ---- */
+    .footer{padding-top:48px;margin-top:60px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+    .footer a{color:var(--ink-soft);font-weight:500}
+
+    /* ---- Responsive ---- */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;gap:40px;margin-bottom:56px}
+      .cards{grid-template-columns:1fr 1fr}
+      .ai-grid{grid-template-columns:1fr 1fr}
+      .impact{grid-template-columns:1fr 1fr}
+      .metric{border-bottom:1px solid var(--line)}
+      .metric:nth-child(2n){border-right:0}
+      .row{grid-template-columns:1fr;gap:.4rem}
+    }
+    @media(max-width:560px){
+      .page{padding:24px 18px 56px}
+      .mast{margin-bottom:40px}
+      .nav{gap:1rem}
+      .nav a:not(.nav-cta){display:none}
+      h1{font-size:2.5rem;margin-bottom:16px}
+      .dek{font-size:1.2rem}
+      .intro{font-size:.98rem}
+      .hero{gap:28px;margin-bottom:44px}
+      .actions .button{width:100%;justify-content:center}
+      .workflow{font-size:.7rem;gap:.32rem}
+      .workflow span{padding:.36rem .5rem}
+      .fast-scan,.cards,.ai-grid,.impact{grid-template-columns:1fr}
+      .fast-scan > div:nth-child(odd){border-right:0}
+      .fast-scan > div{border-bottom:1px solid var(--line)}
+      .fast-scan > div:last-child{border-bottom:0}
+      .metric{border-right:0;border-bottom:1px solid var(--line)}
+      .metric:last-child{border-bottom:0}
+      .ai-step{min-height:auto;padding:1rem}
+      .card,.metric,.row,.boundary,.cta{padding:1rem 1.05rem}
+      section{padding:44px 0}
+      .section-head{margin-bottom:24px}
+      .artifact{grid-template-columns:1fr;gap:.55rem}
+      .cta{align-items:flex-start}
+      .cta .button{width:100%;justify-content:center}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important}
+    }
+    @media(prefers-contrast:more){
+      :root{
+        --paper:#fff;--paper-2:#fff;--ink:#000;--ink-soft:#000;--muted:#222;--muted-2:#333;
+        --line:#666;--line-2:#555;--soft:#eee;--navy:#003366;--navy-deep:#001f3f;
+        --navy-soft:#eef4fa;--navy-line:#336699;--amber:#4a3000;--green:#1f4029;--code:#f2f2f2
+      }
+      .card,.artifact-list,.rows,.metric,.ai-step,.lab,.fast-scan,.cta,.boundary{border-color:#555}
+    }
   </style>
 </head>
 <body>
@@ -76,14 +261,14 @@
     <header class="mast" aria-label="Site header">
       <a class="mark" href="#" aria-label="Sabarish Duvvuru home">SD</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#outcomes">outcomes</a><a href="#value">value</a><a href="#work">work</a><a href="#ai">ai support</a><a class="keep" href="Sabarish-Duvvuru-Resume.pdf" download>resume.pdf</a>
+        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#ai">AI support</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="title">
         <div>
-          <div class="kicker">senior xEV/IPM design · supplier / validation / release readiness</div>
+          <p class="kicker">Senior xEV/IPM Design · Supplier / Validation / Release Readiness</p>
           <h1 id="title">Sabarish Duvvuru</h1>
           <p class="dek">Turning complex engineering follow-up into clear <span>action, risk, and readiness systems</span>.</p>
           <p class="intro">I coordinate inverter/IPM design, supplier readiness, validation follow-up, drawing/release actions, and cross-functional engineering reviews. I use AI tools where they create practical leverage: extracting open actions, separating evidence from assumptions, surfacing risks, and preparing <strong>review-ready updates</strong> engineers can verify.</p>
@@ -96,10 +281,10 @@
             <span>engineering inputs</span><b>→</b><span>AI-assisted structure</span><b>→</b><span>human gate</span><b>→</b><span>readiness output</span>
           </div>
           <dl class="fast-scan" aria-label="Fast profile scan">
-            <div><dt>role</dt><dd>Sr. Engineer / US Design Engineering Lead — IPM</dd></div>
-            <div><dt>domain</dt><dd>xEV · inverter/IPM · mechanical design · supplier readiness</dd></div>
-            <div><dt>workflow value</dt><dd>supplier closure · validation visibility · release follow-up</dd></div>
-            <div><dt>AI support</dt><dd>extract actions · classify risks · draft review-ready summaries</dd></div>
+            <div><dt>Role</dt><dd>Sr. Engineer / US Design Engineering Lead — IPM</dd></div>
+            <div><dt>Domain</dt><dd>xEV · inverter/IPM · mechanical design · supplier readiness</dd></div>
+            <div><dt>Workflow value</dt><dd>Supplier closure · validation visibility · release follow-up</dd></div>
+            <div><dt>AI support</dt><dd>Extract actions · classify risks · draft review-ready summaries</dd></div>
           </dl>
           <div class="best-fit">
             <h2>Best fit</h2>
@@ -107,18 +292,25 @@
           </div>
         </div>
         <aside class="lab" aria-label="Public-safe engineering workflow example">
-          <div class="tabs"><span class="tab">inputs</span><span class="tab">structure</span><span class="tab">review</span><span class="tab">output</span></div>
+          <div class="lab-head">
+            <p class="lh-label">Workflow example</p>
+            <p class="lh-title">From scattered inputs to readiness output</p>
+          </div>
           <div class="flow-panel" aria-label="Engineering workflow value example">
-            <div class="flow-step"><span>01 inputs</span><strong>Notes, emails, trackers, PDFs</strong><p>Scattered workstream context from design, supplier, validation, and release follow-up.</p></div>
-            <div class="flow-step"><span>02 AI support</span><strong>Owner / action / risk view</strong><p>Draft structure that separates confirmed facts, assumptions, evidence needed, and next checks.</p></div>
-            <div class="flow-step"><span>03 engineer gate</span><strong>Accept, correct, reject</strong><p>Human review controls risk interpretation, acceptance criteria, and decisions.</p></div>
-            <div class="flow-step"><span>04 output</span><strong>Readiness update</strong><p>Clear actions, open risks, owner asks, and decision points for review.</p></div>
+            <div class="flow-step"><div class="fs-n">01 · INPUTS</div><strong>Notes, emails, trackers, PDFs</strong><p>Scattered workstream context from design, supplier, validation, and release follow-up.</p></div>
+            <div class="flow-step"><div class="fs-n">02 · AI SUPPORT</div><strong>Owner / action / risk view</strong><p>Draft structure that separates confirmed facts, assumptions, evidence needed, and next checks.</p></div>
+            <div class="flow-step"><div class="fs-n">03 · ENGINEER GATE</div><strong>Accept, correct, reject</strong><p>Human review controls risk interpretation, acceptance criteria, and decisions.</p></div>
+            <div class="flow-step"><div class="fs-n">04 · OUTPUT</div><strong>Readiness update</strong><p>Clear actions, open risks, owner asks, and decision points for review.</p></div>
           </div>
         </aside>
       </section>
 
       <section id="outcomes" aria-labelledby="outcomes-title">
-        <div class="section-head"><h2 id="outcomes-title">What I help teams do</h2><p>Practical operating improvements for engineering managers, design leads, supplier teams, and validation/release reviews.</p></div>
+        <div class="section-head">
+          <p class="eyebrow">Outcomes</p>
+          <h2 id="outcomes-title">What I help teams do</h2>
+          <p>Practical operating improvements for engineering managers, design leads, supplier teams, and validation/release reviews.</p>
+        </div>
         <div class="ai-grid" aria-label="Engineering operating outcomes">
           <article class="ai-step"><div class="n">01</div><h3>Close supplier actions faster</h3><p>Make owner, evidence, timing, blocked item, and escalation path visible in one review view.</p></article>
           <article class="ai-step"><div class="n">02</div><h3>Make validation readiness visible</h3><p>Track what is confirmed, what is missing, what changed, and what needs an engineering decision.</p></article>
@@ -128,7 +320,11 @@
       </section>
 
       <section id="value" aria-labelledby="value-title">
-        <div class="section-head"><h2 id="value-title">Value created</h2><p>Measured outcomes from automotive engineering roles. The AI workflow layer extends the same execution discipline into faster review and follow-up systems.</p></div>
+        <div class="section-head">
+          <p class="eyebrow">Impact</p>
+          <h2 id="value-title">Value created</h2>
+          <p>Measured outcomes from automotive engineering roles. The AI workflow layer extends the same execution discipline into faster review and follow-up systems.</p>
+        </div>
         <div class="impact" aria-label="Selected engineering impact metrics">
           <div class="metric"><strong>8+</strong><span>years automotive engineering</span></div>
           <div class="metric"><strong>$525K</strong><span>supplier cost reduction</span></div>
@@ -140,7 +336,11 @@
       </section>
 
       <section id="work" aria-labelledby="work-title">
-        <div class="section-head"><h2 id="work-title">Main engineering work</h2><p>The AI layer only matters because it is grounded in real automotive engineering execution.</p></div>
+        <div class="section-head">
+          <p class="eyebrow">Work</p>
+          <h2 id="work-title">Main engineering work</h2>
+          <p>The AI layer only matters because it is grounded in real automotive engineering execution.</p>
+        </div>
         <div class="cards">
           <article class="card"><span class="label">01</span><h3>xEV/IPM design coordination</h3><p>Coordinate design, drawing, validation, supplier, and release-readiness workstreams for inverter/IPM engineering.</p></article>
           <article class="card"><span class="label">02</span><h3>Supplier and validation readiness</h3><p>Track open risks, evidence needs, owner actions, timing concerns, and follow-up paths.</p></article>
@@ -149,7 +349,11 @@
       </section>
 
       <section id="ai" aria-labelledby="ai-title">
-        <div class="section-head"><h2 id="ai-title">Where AI helps</h2><p>AI is useful when it reduces review friction without taking ownership away from engineers.</p></div>
+        <div class="section-head">
+          <p class="eyebrow">AI support</p>
+          <h2 id="ai-title">Where AI helps</h2>
+          <p>AI is useful when it reduces review friction without taking ownership away from engineers.</p>
+        </div>
         <div class="ai-grid">
           <article class="ai-step"><div class="n">01</div><h3>Extract open actions</h3><p>Pull owners, due dates, missing inputs, and open questions from notes, trackers, email, and review material.</p></article>
           <article class="ai-step"><div class="n">02</div><h3>Classify risks</h3><p>Group design, supplier, validation, timing, and release-readiness issues without mixing facts and assumptions.</p></article>
@@ -159,7 +363,11 @@
       </section>
 
       <section id="artifacts" aria-labelledby="artifacts-title">
-        <div class="section-head"><h2 id="artifacts-title">Manager-facing outputs</h2><p>Generalized public-safe examples of outputs that help leaders and engineers see what is open, who owns it, and what decision is needed.</p></div>
+        <div class="section-head">
+          <p class="eyebrow">Manager-facing outputs</p>
+          <h2 id="artifacts-title">Review-ready artifacts</h2>
+          <p>Generalized public-safe examples of outputs that help leaders and engineers see what is open, who owns it, and what decision is needed.</p>
+        </div>
         <div class="artifact-list" aria-label="Public workflow artifact catalog">
           <div class="artifact"><code>Readiness review pack</code><p>Validation, supplier, drawing, and release status organized into reviewable owner/action/risk views.</p></div>
           <div class="artifact"><code>Supplier action closure view</code><p>Open supplier actions, evidence needed, due dates, blocked items, and escalation asks.</p></div>
@@ -169,8 +377,12 @@
         <p class="note">These patterns are intentionally generalized so the workflow value is visible without exposing customer, supplier, program, drawing, or validation details.</p>
       </section>
 
-      <section aria-labelledby="foundation-title">
-        <div class="section-head"><h2 id="foundation-title">Engineering foundation</h2><p>Role-specific execution experience behind the workflow improvement story.</p></div>
+      <section id="experience" aria-labelledby="foundation-title">
+        <div class="section-head">
+          <p class="eyebrow">Experience</p>
+          <h2 id="foundation-title">Engineering foundation</h2>
+          <p>Role-specific execution experience behind the workflow improvement story.</p>
+        </div>
         <div class="rows">
           <article class="row"><div class="date">2026 — present</div><div><h3>Astemo Americas, Inc. — Sr. Engineer / US Design Engineering Lead — IPM</h3><p>xEV/IPM coordination, supplier readiness, validation alignment, drawing/release readiness, and follow-up systems that reduce handoff ambiguity.</p></div></article>
           <article class="row"><div class="date">2023 — 2025</div><div><h3>Astemo Indiana, Inc. — Sr. Engineer, automotive inverter development</h3><p>Closed technical questions, supplier actions, validation needs, and release-readiness items across cross-functional US/Japan engineering workstreams.</p></div></article>
@@ -179,8 +391,12 @@
         </div>
       </section>
 
-      <section aria-labelledby="stack-title">
-        <div class="section-head"><h2 id="stack-title">Engineering + AI workflow stack</h2><p>Domain methods and tools used to create practical engineering follow-up value. Lightweight formats are used only when they help the review process.</p></div>
+      <section id="stack" aria-labelledby="stack-title">
+        <div class="section-head">
+          <p class="eyebrow">Stack</p>
+          <h2 id="stack-title">Engineering + AI workflow stack</h2>
+          <p>Domain methods and tools used to create practical engineering follow-up value. Lightweight formats are used only when they help the review process.</p>
+        </div>
         <div class="tags" aria-label="Technical and workflow stack">
           <span class="tag green">xEV/IPM</span><span class="tag green">supplier readiness</span><span class="tag green">validation planning</span><span class="tag green">DFMEA</span><span class="tag green">DVP&amp;R</span><span class="tag green">DRBFM</span><span class="tag">CAD/PLM</span><span class="tag">CATIA V5</span><span class="tag">NX</span><span class="tag">Teamcenter</span><span class="tag">ENOVIA</span><span class="tag blue">Power BI</span><span class="tag ai">AI-assisted review</span><span class="tag ai">action extraction</span><span class="tag ai">risk summarization</span><span class="tag ai">readiness summaries</span><span class="tag blue">workflow diagrams</span><span class="tag blue">decision logs</span>
         </div>
