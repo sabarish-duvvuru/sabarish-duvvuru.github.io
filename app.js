@@ -8,6 +8,7 @@ import { initDither } from './js/dither.js';
 import { initFlowchart } from './js/flowchart.js';
 import { initExtractor } from './js/extractor.js';
 import { initRiskSim } from './js/risk-sim.js';
+import { initSpendChart } from './js/journey.js';
 
 const LAB = '#lab';
 
@@ -56,6 +57,20 @@ async function boot() {
   for (const d of demos) {
     const el = section.querySelector(d.sel);
     if (el) io.observe(el);
+  }
+
+  // ---- journey spend chart (separate section, lazy init on scroll) ----
+  const journeyChart = document.querySelector('#journey [data-chart]');
+  if (journeyChart) {
+    const jio = new IntersectionObserver((entries, obs) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          once(e.target, () => { try { initSpendChart(document.querySelector('#journey')); } catch (err) { console.error('[journey] init failed', err); } });
+          obs.unobserve(e.target);
+        }
+      }
+    }, { rootMargin: '120px' });
+    jio.observe(journeyChart);
   }
 }
 

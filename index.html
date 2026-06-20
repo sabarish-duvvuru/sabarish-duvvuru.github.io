@@ -273,7 +273,7 @@
     <header class="mast" aria-label="Site header">
       <a class="mark" href="#" aria-label="Sabarish Duvvuru home">SD</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#lab" class="nav-lab">Live Lab</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
+        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#lab" class="nav-lab">Live Lab</a><a href="#journey">AI Journey</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
       </nav>
     </header>
 
@@ -389,7 +389,7 @@
                 </select>
               </label>
             </div>
-            <p class="cap"><strong>Why this maps to engineering:</strong> data reduction and signal quantization — the same instinct that turns noisy validation data into a clean review-ready signal. <span data-status></span></p>
+            <p class="cap"><strong>This is my real agent mesh.</strong> The dither renders the SHADOW fleet — J.A.R.V.I.S., F.R.I.D.A.Y. (hub), A.U.R.I.O.N. (router), U.L.T.R.O.N., S.E.N.T.R.Y., and peers — with signal propagating along verified Tailscale edges, quantized live. The fleet I orchestrated, not hand-coded, visualized by the page itself. <span data-status></span></p>
           </article>
 
           <!-- 2. Interactive readiness flowchart -->
@@ -444,7 +444,7 @@
         </div>
 
         <div class="lab-legend">
-          <p><strong>How this is built:</strong> every demo is plain JavaScript and WGSL, served as static files from this repo. <code>dither.js</code> runs a real WebGPU compute shader (with a CPU Floyd–Steinberg fallback). <code>extractor.js</code> is a hand-built tokenizer + scoring pipeline — no neural net, so it's instant and fully auditable. <code>flowchart.js</code> and <code>risk-sim.js</code> use Canvas2D physics with static SVG fallbacks. All four pause when scrolled out of view and respect <code>prefers-reduced-motion</code>. Zero network requests after the page loads.</p>
+          <p><strong>How this is built:</strong> every demo was <strong>written by an AI agent I orchestrate</strong>, not hand-coded — plain JavaScript and WGSL, served as static files from this repo, and verified by pixel inspection before shipping. <code>dither.js</code> runs a real WebGPU compute shader (with a CPU Floyd–Steinberg fallback) over the verified SHADOW mesh topology. <code>extractor.js</code> is a deterministic tokenizer + scoring pipeline — no neural net, so it's instant and fully auditable. <code>flowchart.js</code> and <code>risk-sim.js</code> use Canvas2D physics with static SVG fallbacks. All four pause when scrolled out of view and respect <code>prefers-reduced-motion</code>. Zero network requests after the page loads.</p>
         </div>
       </section>
 
@@ -475,6 +475,56 @@
           <div class="artifact"><code>Decision / escalation brief</code><p>Bottom line, risk, options, owner ask, timing impact, and recommended next review path.</p></div>
         </div>
         <p class="note">These patterns are intentionally generalized so the workflow value is visible without exposing customer, supplier, program, drawing, or validation details.</p>
+      </section>
+
+      <section id="journey" aria-labelledby="journey-title">
+        <div class="section-head">
+          <p class="eyebrow">AI Journey</p>
+          <h2 id="journey-title">From ChatGPT launch to deployed agent mesh.</h2>
+          <p>Three and a half years of compounding AI investment — personal exploration, multi-provider spend, and agent orchestration now running at work and across my own multi-device fleet.</p>
+        </div>
+
+        <div class="journey-phases">
+          <article class="phase">
+            <div class="ph-num">PHASE 01 · 2022–2023</div>
+            <h3>Explore</h3>
+            <p class="ph-when">Started at ChatGPT's public launch, late 2022.</p>
+            <p>Began with a single ChatGPT Plus subscription. Explored prompts, limits, and where generative AI could reduce the review-friction I saw daily in engineering follow-up — scattered actions, unclear owners, lost decisions.</p>
+          </article>
+          <article class="phase">
+            <div class="ph-num">PHASE 02 · 2024–2025</div>
+            <h3>Invest &amp; route</h3>
+            <p class="ph-when">Grew into a multi-provider stack.</p>
+            <p>ChatGPT/Codex, Cursor, Gemini, Z.AI GLM, OpenRouter, and local Ollama — routed by task type: long docs to Gemini, bulk code to GLM, raw/private to local, final synthesis to ChatGPT. <strong>Multi-model orchestration, not single-tool use.</strong></p>
+          </article>
+          <article class="phase">
+            <div class="ph-num">PHASE 03 · 2025–present</div>
+            <h3>Deploy at work</h3>
+            <p class="ph-when">Governed agents via Microsoft Copilot Studio.</p>
+            <p>At Astemo, built and deployed governed AI agents for engineering follow-up — <strong>action extraction, supplier-issue triage, meeting prep</strong>. Governed, IT-reviewable, human-gated. The same discipline, now on enterprise infrastructure.</p>
+          </article>
+        </div>
+
+        <div class="spend-card">
+          <div class="spend-head">
+            <h3>Subscription spend over time</h3>
+            <span class="verify-badge">figures pending verification</span>
+          </div>
+          <div class="spend-chart" data-chart></div>
+          <p class="spend-foot">Models the growth from a single ChatGPT Plus to the current multi-provider stack. Real figures replace the <code>[verify]</code> markers once confirmed — no dollar amount ships unverified on a credibility site.</p>
+        </div>
+
+        <div class="built-callout">
+          <h3>I didn't hand-code any of this.</h3>
+          <p>The agent mesh this site runs on, the <strong>~480 skills</strong> in my workflow library, and this very page were <strong>built by AI agents I orchestrate</strong> — not written by hand. This is the actual differentiator: I don't just use AI, I direct fleets of agents to ship complete systems, then verify their work by pixel inspection before it's called done.</p>
+          <p>The Live Lab dither above is rendering my <strong>real SHADOW fleet</strong> — J.A.R.V.I.S. (compute), F.R.I.D.A.Y. (gateway/hub), A.U.R.I.O.N. (router), U.L.T.R.O.N., S.E.N.T.R.Y., plus off-mesh peers. The signal you see propagating is the mesh topology quantized in real time. The fleet exists; the page visualizes it.</p>
+          <div class="built-stats">
+            <div class="built-stat"><span class="num">~480</span><span class="lbl">active skills authored through agent workflows</span></div>
+            <div class="built-stat"><span class="num">593+</span><span class="lbl">logged agent sessions of AI building real systems</span></div>
+            <div class="built-stat"><span class="num">8</span><span class="lbl">device nodes in the orchestrated SHADOW mesh</span></div>
+          </div>
+        </div>
+        <p class="journey-note">Skills are extracted from successful exchanges via a pattern-to-skill agent, then refined — capability compounds over time rather than resetting each session. The mesh coordinates personas (red/mac/leo/shadow) across devices; this page is one visible output of that system.</p>
       </section>
 
       <section id="experience" aria-labelledby="foundation-title">

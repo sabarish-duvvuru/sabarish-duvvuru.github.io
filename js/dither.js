@@ -10,6 +10,7 @@
 // not. The shader reads src[x,y] from the buffer directly.
 
 import { hasWebGPU, viewportLoop, prefersReducedMotion, setStatus, clamp } from './common.js';
+import { NODES, EDGES } from './mesh-data.js';
 
 // 8x8 Bayer threshold matrix, normalized 0..1. Classic ordered dithering —
 // deterministic, no error propagation artifacts, GPU-friendly.
@@ -82,23 +83,79 @@ fn main(@builtin(global_invocation_id) gid: vec3<u32>) {
 }
 `;
 
-// Source image — a synthetic engineering "scope" pattern: concentric gradients
-// + a moving sinusoidal test signal. Returns a Uint8Array (RGBA) and also
-// draws to a canvas for the CPU fallback path.
+// Source field — the real SHADOW mesh, drawn as crisp vector geometry (filled
+// node dots + stroked edges) onto an offscreen 2D canvas, then read back as
+// pixels. Sharp geometry survives dither quantization far better than soft
+// Gaussian fields, and the mesh reads as a real network: distinct nodes,
+// thin connecting lines, traveling signal pulses.
+//
+// This is the actual agent fleet I orchestrated (not hand-coded), visualized.
+const _nodes = NODES.map(n => ({
+  ...n,
+  px: n.x, py: n.y,
+  strength: n.hub ? 1.0 : (n.satellite ? 0.6 : 0.85),
+  radius: n.hub ? 7 : (n.satellite ? 3 : 5),
+}));
+const _edges = EDGES.map(([a, b]) => {
+  const na = _nodes.find(n => n.id === a), nb = _nodes.find(n => n.id === b);
+  return { na, nb, satellite: na.satellite || nb.satellite };
+});
+
+// Offscreen source canvas — drawn fresh each frame, read back as the dither input.
+const _srcCanvas = typeof document !== 'undefined' ? document.createElement('canvas') : null;
+let _srcCtx = null;
+function getSrcCtx(W, H) {
+  if (!_srcCanvas) return null;
+  if (_srcCanvas.width !== W) { _srcCanvas.width = W; _srcCanvas.height = H; _srcCtx = _srcCanvas.getContext('2d'); }
+  return _srcCtx;
+}
+
 function sourcePixels(W, H, t) {
-  const data = new Uint8Array(W * H * 4);
-  const cx = W / 2, cy = H / 2;
-  for (let y = 0; y < H; y++) {
-    for (let x = 0; x < W; x++) {
-      const dx = (x - cx) / W, dy = (y - cy) / H;
-      const r = Math.sqrt(dx * dx + dy * dy);
-      const wave = 0.5 + 0.5 * Math.sin(r * 60 - t * 1.5);
-      const v = clamp(0.15 + wave * 0.85 - r * 0.6, 0, 1);
-      const i = (y * W + x) * 4;
-      data[i] = v * 255; data[i + 1] = v * 245; data[i + 2] = v * 230; data[i + 3] = 255;
-    }
+  const ctx = getSrcCtx(W, H);
+  if (!ctx) return new Uint8Array(W * H * 4); // defensive: no DOM (worker)
+  // clear to black (0 field); dither maps bright→navy, dark→paper, so the mesh
+  // (drawn bright) renders as navy nodes/lines on the paper background.
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, W, H);
+
+  // edges first (so nodes draw on top)
+  ctx.lineCap = 'round';
+  for (const e of _edges) {
+    const ax = e.na.px * W, ay = e.na.py * H, bx = e.nb.px * W, by = e.nb.py * H;
+    // traveling signal pulse: a bright dot moving along each edge
+    const pulseT = (t * 0.35 + (e.na.px + e.na.py)) % 1;
+    const px = ax + (bx - ax) * pulseT, py = ay + (by - ay) * pulseT;
+    // base line (dim) + moving pulse (bright) — satellites thinner/dimmer
+    ctx.strokeStyle = e.satellite ? 'rgba(140,140,140,1)' : 'rgba(170,170,170,1)';
+    ctx.lineWidth = e.satellite ? 1 : 1.5;
+    ctx.beginPath(); ctx.moveTo(ax, ay); ctx.lineTo(bx, by); ctx.stroke();
+    // moving pulse
+    const grad = ctx.createRadialGradient(px, py, 0, px, py, e.satellite ? 3 : 4);
+    grad.addColorStop(0, 'rgba(255,255,255,1)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath(); ctx.arc(px, py, e.satellite ? 3 : 4, 0, Math.PI * 2); ctx.fill();
   }
-  return data;
+
+  // nodes: bright filled dots with a soft glow, hub (FRIDAY) largest/brightest
+  for (const n of _nodes) {
+    const cx = n.px * W, cy = n.py * H;
+    const pulse = 0.75 + 0.25 * Math.sin(t * 1.8 + n.px * 9 + n.py * 7);
+    const r = n.radius * pulse;
+    // glow halo
+    const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r * 2.5);
+    const a = n.strength * pulse;
+    grad.addColorStop(0, `rgba(255,255,255,${a})`);
+    grad.addColorStop(0.5, `rgba(255,255,255,${a * 0.4})`);
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath(); ctx.arc(cx, cy, r * 2.5, 0, Math.PI * 2); ctx.fill();
+    // solid core
+    ctx.fillStyle = '#fff';
+    ctx.beginPath(); ctx.arc(cx, cy, r * 0.7, 0, Math.PI * 2); ctx.fill();
+  }
+
+  return ctx.getImageData(0, 0, W, H).data;
 }
 
 // Pack RGBA bytes into u32 words (0xAABBGGRR) for the storage buffer.
