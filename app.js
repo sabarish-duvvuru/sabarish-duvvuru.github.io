@@ -9,6 +9,7 @@ import { initFlowchart } from './js/flowchart.js';
 import { initExtractor } from './js/extractor.js';
 import { initRiskSim } from './js/risk-sim.js';
 import { initSpendChart } from './js/journey.js';
+import { initMetrics } from './js/metrics.js';
 
 const LAB = '#lab';
 
@@ -71,6 +72,20 @@ async function boot() {
       }
     }, { rootMargin: '120px' });
     jio.observe(journeyChart);
+  }
+
+  // ---- metrics dashboard charts (lazy init on scroll) ----
+  const metricsSection = document.querySelector('#metrics');
+  if (metricsSection) {
+    const mio = new IntersectionObserver((entries, obs) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          once(e.target, () => { try { initMetrics(metricsSection); } catch (err) { console.error('[metrics] init failed', err); } });
+          obs.unobserve(e.target);
+        }
+      }
+    }, { rootMargin: '120px' });
+    mio.observe(metricsSection);
   }
 }
 

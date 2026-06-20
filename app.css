@@ -251,3 +251,65 @@
 @media (prefers-contrast:more){
   #journey .phase,#journey .spend-card,#journey .built-callout{border-color:#555}
 }
+
+/* ============================================================ */
+/*  Capability Metrics section (#metrics)                       */
+/* ============================================================ */
+
+#metrics .metrics-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.4rem;
+}
+#metrics .metrics-card{
+  border:1px solid var(--line);background:var(--paper-2);
+  border-radius:var(--r);padding:1.15rem 1.2rem;
+  display:flex;flex-direction:column;gap:.55rem;
+  transition:border-color .15s ease;
+}
+#metrics .metrics-card:hover{border-color:var(--navy-line)}
+#metrics .metrics-card h3{
+  margin:0;font-size:1.02rem;letter-spacing:-.02em;font-weight:650;line-height:1.2;
+}
+#metrics .metrics-src{
+  margin:0;font:500 .72rem/1.4 var(--mono);color:var(--muted);letter-spacing:.01em;
+}
+#metrics .metrics-src .verify-badge{
+  font:600 .64rem/1 var(--mono);color:var(--amber);
+  border:1px solid #e0c98a;background:#fbf5e8;
+  border-radius:999px;padding:.22rem .45rem;margin-left:.2rem;
+}
+#metrics .metrics-chart{width:100%}
+#metrics .metrics-chart svg{display:block}
+#metrics .metrics-cap{
+  margin:0;color:var(--muted);font-size:.84rem;line-height:1.5;
+}
+#metrics .metrics-cap code{
+  font:600 .76rem/1.3 var(--mono);background:var(--code);
+  border:1px solid var(--line);border-radius:5px;padding:.1rem .3rem;color:var(--navy);
+}
+#metrics .metrics-foot{
+  margin-top:1.4rem;padding:1rem 1.15rem;
+  border-left:3px solid var(--navy);background:var(--navy-soft);
+  border-radius:0 var(--r-sm) var(--r-sm) 0;
+  color:var(--ink-soft);font-size:.92rem;line-height:1.6;
+}
+#metrics .metrics-foot strong{color:var(--navy-deep);font-weight:650}
+#metrics .metrics-foot code{
+  font:600 .78rem/1.3 var(--mono);background:var(--code);
+  border:1px solid var(--line);border-radius:5px;padding:.1rem .35rem;color:var(--navy);
+}
+#metrics .metrics-line{transition:stroke-dashoffset 1.8s ease-out}
+#metrics .metrics-bar{transition:width 1.2s ease-out}
+
+@media (max-width:900px){
+  #metrics .metrics-grid{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  #metrics .metrics-card{padding:1rem 1.05rem}
+}
+@media (prefers-reduced-motion:reduce){
+  #metrics .metrics-line{stroke-dashoffset:0 !important;transition:none !important}
+  #metrics .metrics-bar{transition:none !important}
+}
+@media (prefers-contrast:more){
+  #metrics .metrics-card,#metrics .metrics-foot{border-color:#555}
+}

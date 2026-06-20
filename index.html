@@ -273,7 +273,7 @@
     <header class="mast" aria-label="Site header">
       <a class="mark" href="#" aria-label="Sabarish Duvvuru home">SD</a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#lab" class="nav-lab">Live Lab</a><a href="#journey">AI Journey</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
+        <a href="#outcomes">Outcomes</a><a href="#value">Impact</a><a href="#work">Work</a><a href="#lab" class="nav-lab">Live Lab</a><a href="#journey">AI Journey</a><a href="#metrics">Metrics</a><a href="#experience">Experience</a><a class="nav-cta" href="Sabarish-Duvvuru-Resume.pdf" download>Resume PDF</a>
       </nav>
     </header>
 
@@ -526,6 +526,46 @@
           </div>
         </div>
         <p class="journey-note">Capability compounds — each successful exchange gets extracted into a reusable skill, so the fleet gets sharper over time instead of resetting every session. The mesh coordinates personas (red/mac/leo/shadow) across devices; this page is one visible output of that system, and the proof that the practice works.</p>
+      </section>
+
+      <section id="metrics" aria-labelledby="metrics-title">
+        <div class="section-head">
+          <p class="eyebrow">Capability metrics</p>
+          <h2 id="metrics-title">Judgment compounds — here's the measured proof.</h2>
+          <p>Four data-grounded charts. Sessions are counted from real logged agent activity; skills are counted from the actual library. Hours are inferred from the stated 16–18 hrs/day practice and marked <code>[verify]</code> until confirmed. No invented numbers.</p>
+        </div>
+
+        <div class="metrics-grid">
+          <article class="metrics-card">
+            <h3>Agent sessions per month</h3>
+            <p class="metrics-src">counted from logged session dirs · real data</p>
+            <div class="metrics-chart" data-chart="sessions"></div>
+            <p class="metrics-cap">746 sessions logged (601 professional · 145 personal). The May→June ramp from 127 to 443 sessions is real — counted from the YYMMDD-named session directories. Pre-2026-05 activity was real but unlogged; those months are absent, not zero.</p>
+          </article>
+
+          <article class="metrics-card">
+            <h3>AI hours per month</h3>
+            <p class="metrics-src">inferred from stated practice · <span class="verify-badge">figures pending verification</span></p>
+            <div class="metrics-chart" data-chart="hours"></div>
+            <p class="metrics-cap">The operator stated 16–18 hrs/day since late 2022. The ramp shape is inferred (exploration → sustained); magnitude is operator-stated. Real figures replace the <code>[verify]</code> markers — no dollar amount or hour count publishes unverified.</p>
+          </article>
+
+          <article class="metrics-card">
+            <h3>Skill library scale</h3>
+            <p class="metrics-src">counted from skill directories · real data</p>
+            <div class="metrics-chart" data-chart="skills"></div>
+            <p class="metrics-cap">839 unique skill names across five roots (deduped); 23 first-party skills with tracked SKILL.md. The ~480 active-registry figure is a conservative estimate marked <code>[verify]</code>. Skills are extracted from successful exchanges — the library is the residue of every directed AI win.</p>
+          </article>
+
+          <article class="metrics-card">
+            <h3>Logged investment</h3>
+            <p class="metrics-src">counted from session activity · real data</p>
+            <div class="metrics-chart" data-chart="donut"></div>
+            <p class="metrics-cap">746 total logged agent sessions across professional and personal workspaces. Each is a real recorded instance of AI building a system — the residue of thousands of directed prompts, read-reasonings, and steering decisions.</p>
+          </article>
+        </div>
+
+        <p class="metrics-foot">These charts are not marketing — they're mined from the actual Duality volume: <code>ls spaces/*/sessions/</code> and <code>find ... -name SKILL.md</code>. The compounding is measurable. The practice that produced it is what I'd bring to a team.</p>
       </section>
 
       <section id="experience" aria-labelledby="foundation-title">
